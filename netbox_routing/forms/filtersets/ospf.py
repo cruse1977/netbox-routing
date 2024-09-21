@@ -74,6 +74,13 @@ class OSPFInterfaceFilterForm(NetBoxModelFilterSetForm):
             choices=BOOLEAN_WITH_BLANK_CHOICES
         )
     )
+    passive = forms.NullBooleanField(
+        required=False,
+        label='Is Passive',
+        widget=forms.Select(
+            choices=BOOLEAN_WITH_BLANK_CHOICES
+        )
+    )
     priority = forms.IntegerField(
         required=False
     )

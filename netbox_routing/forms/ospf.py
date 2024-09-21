@@ -72,12 +72,13 @@ class OSPFInterfaceForm(NetBoxModelForm):
     class Meta:
         model = OSPFInterface
         fields = (
-            'device', 'instance', 'area', 'interface', 'priority', 'bfd', 'authentication', 'passphrase', 'description',
+            'device', 'instance', 'area', 'interface', 'priority', 'bfd', 'passive', 'authentication', 'passphrase', 'description',
             'comments',
         )
 
         widgets = {
             'bfd': forms.Select(choices=BOOLEAN_WITH_BLANK_CHOICES),
+            'passive': forms.Select(choices=BOOLEAN_WITH_BLANK_CHOICES),
         }
 
     def __init__(self, *args, **kwargs):

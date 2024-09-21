@@ -41,7 +41,7 @@ class OSPFInterfaceSerializer(NetBoxModelSerializer):
     class Meta:
         model = OSPFInterface
         fields = (
-            'url', 'id', 'display', 'instance', 'area', 'interface', 'priority', 'bfd', 'authentication', 'passphrase',
+            'url', 'id', 'display', 'instance', 'area', 'interface', 'priority', 'bfd', 'passive', 'authentication', 'passphrase',
             'description', 'comments',
         )
         brief_fields = (

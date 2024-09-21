@@ -81,6 +81,7 @@ class OSPFInterface(PrimaryModel):
     )
     priority = models.IntegerField(blank=True, null=True)
     bfd = models.BooleanField(blank=True, null=True, verbose_name='BFD')
+    passive = models.BooleanField(blank=True, null=True, verbose_name='Passive')
     authentication = models.CharField(
         max_length=50,
         choices=choices.AuthenticationChoices,
@@ -93,7 +94,7 @@ class OSPFInterface(PrimaryModel):
         null=True
     )
 
-    clone_fields = ('instance', 'area', 'priority', 'bfd', 'authentication', 'passphrase')
+    clone_fields = ('instance', 'area', 'priority', 'bfd', 'authentication', 'passphrase', 'passive')
     prerequisite_models = (
         'netbox_routing.OSPFInstance', 'netbox_routing.OSPFArea', 'dcim.Interface',
     )
